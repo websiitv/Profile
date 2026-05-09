@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Brhane | Technical Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007BFF;
+            --secondary: #00d4ff;
+            --bg: #050505;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color: var(--primary); }
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dim); transition: 0.3s; font-size: 0.9rem; }
+        nav ul li a:hover { color: var(--primary); }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #001d3d 0%, #050505 100%);
+        }
+
+        header h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin-bottom: 10px; }
+        header p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; }
+
+        .cta-btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: var(--secondary); transform: translateY(-3px); }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 10%; }
+        h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
+
+        /* --- SKILLS GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 10%;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AB.DEV</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="mailto:your-email@gmail.com">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Building Secure <span style="color: var(--primary);">Systems.</span></h1>
+        <p>Student of Applied Mathematics and Aspiring Cybersecurity Expert specializing in Technical Computing and Ethical Hacking.</p>
+        <a href="#about" class="cta-btn">View My Work</a>
+    </header>
+
+    <section id="about">
+        <h2>Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cybersecurity</h3>
+                <p>Focusing on network security, encryption protocols, and ethical hacking methodologies to secure digital assets.</p>
+            </div>
+            <div class="card">
+                <h3>Mathematics</h3>
+                <p>Advanced knowledge in Linear Algebra and Stoichiometry, applying logical structures to complex technical problems.</p>
+            </div>
+            <div class="card">
+                <h3>Web Engineering</h3>
+                <p>Developing responsive, high-performance interfaces using modern HTML, CSS, and JavaScript standards.</p>
+            </div>
+            <div class="card">
+                <h3>Automation</h3>
+                <p>Writing efficient Python scripts for data processing and technical task automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background: #080808;">
+        <h2>Current Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Planet Hotel Menu UI</h3>
+                <p>A sophisticated digital menu system featuring real-time search and multi-language support (Amharic/English).</p>
+            </div>
+            <div class="card">
+                <h3>Security Audit Tools</h3>
+                <p>Exploring the development of local scripts for vulnerability assessment and account security testing.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Abel Brhane Gebreslasie. Built with precision for the future of Tech.
+    </footer>
+
+</body>
+</html>
