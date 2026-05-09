@@ -211,7 +211,7 @@
         </div>
 
     </section>
-    <script>
+<script>
     // Logic to detect the 'target' from the URL (e.g., ?target=insa)
     const urlParams = new URLSearchParams(window.location.search);
     const target = urlParams.get('target');
@@ -220,14 +220,17 @@
     const desc = document.getElementById('cv-desc');
     const link = document.getElementById('cv-link');
 
+    // Default file if no target is found
+    link.href = "General_CV.pdf";
+
     if (target === 'insa') {
         title.innerText = "Cybersecurity & Technical Resume";
         desc.innerText = "Specialized resume for INSA focusing on Ethical Hacking, Network Security, and Python Automation.";
-        link.href = "INSA_Abel.pdf";
+        link.href = "INSA_Application.pdf"; // MATCHES YOUR NEW NAME
     } else if (target === 'japan') {
         title.innerText = "MEXT Scholarship Academic CV";
         desc.innerText = "Academic-focused CV highlighting 1st-place rankings, Applied Mathematics excellence, and research goals.";
-        link.href = "MEXT_Japan.pdf";
+        link.href = "MEXT_Application.pdf"; // MATCHES YOUR NEW NAME
     }
 </script>
     <footer>
