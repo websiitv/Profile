@@ -3,239 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abel Brhane | Technical Portfolio</title>
+    <title>Abel Brhane | Computational Math & Cybersecurity</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #007BFF;
             --secondary: #00d4ff;
+            --accent: #00ff88;
             --bg: #050505;
             --card-bg: #111111;
             --text-main: #ffffff;
             --text-dim: #a0a0a0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
 
         /* --- NAVIGATION --- */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #222;
+            position: fixed; top: 0; width: 100%; padding: 20px 10%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid #222;
         }
-
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color: var(--primary); }
-
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
         nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--text-dim); transition: 0.3s; font-size: 0.9rem; }
+        nav ul li a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
         nav ul li a:hover { color: var(--primary); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, #001d3d 0%, #050505 100%);
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 0 20px; background: radial-gradient(circle at center, #001d3d 0%, #050505 100%);
         }
-
-        header h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin-bottom: 10px; }
-        header p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; }
+        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 15px; }
+        header p { color: var(--text-dim); font-size: 1.2rem; max-width: 800px; margin-bottom: 30px; }
 
         .cta-btn {
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
+            padding: 12px 30px; background: var(--primary); color: white;
+            text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s;
+            display: inline-block;
         }
-        .cta-btn:hover { background: var(--secondary); transform: translateY(-3px); }
+        .cta-btn:hover { background: var(--secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,123,255,0.3); }
 
         /* --- SECTIONS --- */
         section { padding: 100px 10%; }
         h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
-
-        /* --- SKILLS GRID --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #222;
-            transition: 0.3s;
+            background: var(--card-bg); padding: 35px; border-radius: 15px;
+            border: 1px solid #222; transition: 0.3s; position: relative;
         }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
         .card p { color: var(--text-dim); font-size: 0.95rem; }
+        .tag { font-size: 0.7rem; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
 
         /* --- FOOTER --- */
-        footer {
-            padding: 50px 10%;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-        }
+        footer { padding: 50px 10%; text-align: center; border-top: 1px solid #222; color: var(--text-dim); font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">AB.DEV</div>
+        <div class="logo">ABEL.PRO</div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="mailto:your-email@gmail.com">Contact</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <h1>Building Secure <span style="color: var(--primary);">Systems.</span></h1>
-        <p>Student of Applied Mathematics and Aspiring Cybersecurity Expert specializing in Technical Computing and Ethical Hacking.</p>
-        <a href="#about" class="cta-btn">View My Work</a>
+        <h1>Abel Brhane <span style="color: var(--primary);">Gebreslasie</span></h1>
+        <p>Computational Mathematician & Cybersecurity Strategist. Ranked #1 in class with a 95.9% average. Dedicated to securing digital systems through advanced analytical logic.</p>
+        <a href="#expertise" class="cta-btn">View Professional Profile</a>
     </header>
 
-    <section id="about">
-        <h2>Expertise</h2>
+    <section id="expertise">
+        <h2>Core Expertise</h2>
         <div class="grid">
             <div class="card">
-                <h3>Cybersecurity</h3>
-                <p>Focusing on network security, encryption protocols, and ethical hacking methodologies to secure digital assets.</p>
+                <h3>Applied Mathematics</h3>
+                <p>Advanced proficiency in Matrix Theory, Linear Algebra, and Stoichiometry. Leveraging mathematical models to optimize algorithmic performance and security protocols.</p>
             </div>
-<div class="card">
-    <h3>Mathematics & Logic</h3>
-    <p>Ranked 1st in class with an above 95.9% average. Expert in applying mathematical logic to solve complex technical challenges during periods of regional disruption.</p>
-</div>
-<div class="card">
-    <h3>Computer Science</h3>
-    <p>Certified in Computer Science (Level 1) through the DISH program at Mekelle University. Specialized in digital innovation and skill-hub technical standards[cite: 24].</p>
-</div>
             <div class="card">
-                <h3>Automation</h3>
-                <p>Writing efficient Python scripts for data processing and technical task automation.</p>
+                <h3>Cybersecurity Defense</h3>
+                <p>Focused on network security, encryption, and system auditing. Certified in "Keeping Yourself Safe Online" by the Ministry of Education.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="skills" style="background: #080808;">
-        <h2>Current Projects</h2>
-        <div class="grid"><a href="https://abelbrhanegebreslasie.github.io/Frends/" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="card">
-        <h3>Hilton Hotel Menu UI</h3>
-        <p>A sophisticated digital menu system featuring real-time search and multi-language support (Amharic/English).</p>
-        <span style="color: var(--primary); font-size: 0.8rem; font-weight: 600; margin-top: 15px; display: block;">
-            OPEN PROJECT ↗
-        </span>
-    </div>
-</a>
             <div class="card">
-                <h3>Security Audit Tools</h3>
-                <p>Exploring the development of local scripts for vulnerability assessment and account security testing.</p>
+                <h3>Technical Computing</h3>
+                <p>Trained in IT Support and Maintenance (Mekelle University DISH program). Expert in hardware diagnostics, Python scripting, and system automation.</p>
             </div>
         </div>
     </section>
-<section id="connect" style="border-top: 1px solid #222; padding: 100px 10%;">
 
-        <h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 50px;">Certifications & Connectivity</h2>
-
-        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-
-            <div class="card" style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #222;">
-
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Education & Certs</h3>
-
-                <p style="color: var(--text-dim); font-size: 0.95rem;">• High School Diploma (2025)<br>
-
-                   • English Proficiency: IELTS/Duolingo (In Progress)<br>
-
-                   • Cybersecurity Foundations</p>
-
+    <section id="achievements" style="background: #080808;">
+        <h2>Verified Achievements</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Academic Standing</span>
+                <h3>#1 Ranked Student</h3>
+                <p>Graduated at the top of the 2024/25 class. Distinguished scores: <strong>Chemistry (90%)</strong>, <strong>Biology (90%)</strong>, and <strong>Mathematics (83%)</strong> on the ESSLCE.</p>
             </div>
-
-<div class="card" style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #222; text-align: center; border: 1px solid var(--primary);">
-    <h3 id="cv-title" style="color: var(--primary); margin-bottom: 15px;">Academic & Technical CV</h3>
-    <p id="cv-desc" style="color: var(--text-dim); font-size: 0.95rem;">
-        Download my professional Europass CV detailing my 1st-place honors and technical background.
-    </p>
-    <a href="General_CV.pdf" id="cv-link" class="cta-btn" download style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">
-        Download CV (PDF)
-    </a>
-</div>
-
-            <div class="card" style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #222;">
-
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Find Me Online</h3>
-
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Check my code on GitHub or connect for technical collaboration.</p>
-
-                <div style="margin-top: 15px;">
-
-                    <a href="https://github.com/AbelBrhaneGebreslasie" target="_blank" style="color: var(--primary); text-decoration: none; margin-right: 15px;">GitHub ↗</a>
-
-                </div>
-
+            <div class="card">
+                <span class="tag">Professional Certification</span>
+                <h3>Computer Science L1</h3>
+                <p>Certified by the Digital Innovation and Skills Hub (DISH) at Mekelle University. Mastery in technical skill standards and digital innovation.</p>
             </div>
-
+            <div class="card">
+                <span class="tag">Character & Leadership</span>
+                <h3>Ethical Leadership</h3>
+                <p>Certified for "Exceptional Moral Character" by Atse Yohannes Preparatory School. Active participant in international peace-building and community service.</p>
+            </div>
         </div>
-
     </section>
-<script>
-    // Logic to detect the 'target' from the URL (e.g., ?target=insa)
-    const urlParams = new URLSearchParams(window.location.search);
-    const target = urlParams.get('target');
 
-    const title = document.getElementById('cv-title');
-    const desc = document.getElementById('cv-desc');
-    const link = document.getElementById('cv-link');
+    <section id="projects">
+        <h2>Strategic Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Digital Menu System</h3>
+                <p>A sophisticated Hilton Hotel UI featuring real-time multilingual search (Amharic/English) and optimized performance scripts.</p>
+            </div>
+            <div class="card">
+                <h3>Security Audit Scripts</h3>
+                <p>Developing Python-based tools for vulnerability assessment and localized network security testing.</p>
+            </div>
+        </div>
+    </section>
 
-    // Default file if no target is found
-    link.href = "General_CV.pdf";
+    <section id="download" style="text-align: center;">
+        <div class="card" style="max-width: 650px; margin: 0 auto; border: 1px solid var(--primary);">
+            <h3 id="cv-title">Academic & Technical CV</h3>
+            <p id="cv-desc" style="margin-bottom: 25px; color: var(--text-dim);">Download my meticulously detailed CV, customized for scholarships and high-level technical roles.</p>
+            <a href="General_CV.pdf" id="cv-link" class="cta-btn" download>Download CV (PDF)</a>
+        </div>
+    </section>
 
-    if (target === 'insa') {
-        title.innerText = "Cybersecurity & Technical Resume";
-        desc.innerText = "Specialized resume for INSA focusing on Ethical Hacking, Network Security, and Python Automation.";
-        link.href = "INSA_Application.pdf"; // MATCHES YOUR NEW NAME
-    } else if (target === 'japan') {
-        title.innerText = "MEXT Scholarship Academic CV";
-        desc.innerText = "Academic-focused CV highlighting 1st-place rankings, Applied Mathematics excellence, and research goals.";
-        link.href = "MEXT_Application.pdf"; // MATCHES YOUR NEW NAME
-    }
-</script>
     <footer>
-        &copy; 2026 Abel Brhane Gebreslasie. Built with precision for the future of Tech.
+        &copy; 2026 Abel Brhane Gebreslasie | Applied Mathematics & Cybersecurity Excellence.
     </footer>
 
+    <script>
+        // Logic to detect the 'target' from the URL (e.g., ?target=insa)
+        const urlParams = new URLSearchParams(window.location.search);
+        const target = urlParams.get('target');
+
+        const title = document.getElementById('cv-title');
+        const desc = document.getElementById('cv-desc');
+        const link = document.getElementById('cv-link');
+
+        // Set the dynamic content based on URL parameter
+        if (target === 'insa') {
+            title.innerText = "Cybersecurity & Technical Resume";
+            desc.innerText = "Specialized profile for INSA focusing on Ethical Hacking, Network Defense, and Python Automation.";
+            link.href = "INSA_Application.pdf";
+        } else if (target === 'japan') {
+            title.innerText = "MEXT Scholarship Academic CV";
+            desc.innerText = "Research-focused CV highlighting #1 class ranking, 90% Chemistry honors, and Mathematics excellence.";
+            link.href = "MEXT_Application.pdf";
+        } else {
+            link.href = "General_CV.pdf";
+        }
+    </script>
 </body>
 </html>
