@@ -184,12 +184,12 @@
 
             </div>
 
-<div class="card" style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #222; text-align: center;">
-    <h3 style="color: var(--primary); margin-bottom: 15px;">Academic & Technical CV</h3>
-    <p style="color: var(--text-dim); font-size: 0.95rem;">
-        Download my Europass CV detailing my 1st-place honors and technical background.
+<div class="card" style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #222; text-align: center; border: 1px solid var(--primary);">
+    <h3 id="cv-title" style="color: var(--primary); margin-bottom: 15px;">Academic & Technical CV</h3>
+    <p id="cv-desc" style="color: var(--text-dim); font-size: 0.95rem;">
+        Download my professional Europass CV detailing my 1st-place honors and technical background.
     </p>
-    <a href="Abel_CV.pdf" class="cta-btn" download style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">
+    <a href="Abel_CV.pdf" id="cv-link" class="cta-btn" download style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">
         Download CV (PDF)
     </a>
 </div>
@@ -211,6 +211,25 @@
         </div>
 
     </section>
+    <script>
+    // Logic to detect the 'target' from the URL (e.g., ?target=insa)
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('target');
+
+    const title = document.getElementById('cv-title');
+    const desc = document.getElementById('cv-desc');
+    const link = document.getElementById('cv-link');
+
+    if (target === 'insa') {
+        title.innerText = "Cybersecurity & Technical Resume";
+        desc.innerText = "Specialized resume for INSA focusing on Ethical Hacking, Network Security, and Python Automation.";
+        link.href = "INSA_Abel.pdf";
+    } else if (target === 'japan') {
+        title.innerText = "MEXT Scholarship Academic CV";
+        desc.innerText = "Academic-focused CV highlighting 1st-place rankings, Applied Mathematics excellence, and research goals.";
+        link.href = "MEXT_Japan.pdf";
+    }
+</script>
     <footer>
         &copy; 2026 Abel Brhane Gebreslasie. Built with precision for the future of Tech.
     </footer>
