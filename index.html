@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abel Brhane | Computational Math & Cybersecurity</title>
+    
     <meta name="description" content="Abel Brhane - Ranked #1 Scholar, Computational Mathematician, and Cybersecurity Specialist.">
     <meta property="og:title" content="Abel Brhane | Technical Portfolio">
     <meta property="og:description" content="Explore the technical projects and academic achievements of Abel Brhane.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -20,7 +22,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; overflow-x: hidden; }
 
         /* --- NAVIGATION --- */
         nav {
@@ -51,20 +53,29 @@
         .cta-btn:hover { background: var(--secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,123,255,0.3); }
 
         /* --- SECTIONS --- */
-        section { padding: 100px 10%; }
+        section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        
         h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .card {
             background: var(--card-bg); padding: 35px; border-radius: 15px;
             border: 1px solid #222; transition: 0.3s; position: relative;
+            height: 100%;
         }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); background: #161616; }
         .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
         .card p { color: var(--text-dim); font-size: 0.95rem; }
         .tag { font-size: 0.7rem; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
 
         footer { padding: 50px 10%; text-align: center; border-top: 1px solid #222; color: var(--text-dim); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 5%; }
+            nav ul { gap: 15px; }
+            section { padding: 60px 5%; }
+        }
     </style>
 </head>
 <body>
@@ -75,7 +86,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#achievements">Achievements</a></li>
-            <li><a href="abel.b.gebreslasie@gmail.com">Contact</a></li>
+            <li><a href="mailto:abel.b.gebreslasie@gmail.com">Contact</a></li>
         </ul>
     </nav>
 
@@ -89,15 +100,15 @@
         <h2>Core Expertise</h2>
         <div class="grid">
             <div class="card">
-                <h3>Applied Mathematics</h3>
+                <h3>∑ Applied Mathematics</h3>
                 <p>Specializing in Matrix Theory, Linear Algebra, and Stoichiometry. Leveraging analytical precision to solve complex computational challenges.</p>
             </div>
             <div class="card">
-                <h3>Cybersecurity Defense</h3>
+                <h3>🛡️ Cybersecurity Defense</h3>
                 <p>Focusing on network security, encryption protocols, and vulnerability assessments. Expert in securing account infrastructures.</p>
             </div>
             <div class="card">
-                <h3>Technical Computing</h3>
+                <h3>💻 Technical Computing</h3>
                 <p>Trained in IT Support and Maintenance via Mekelle University (DISH program). Proficient in Python automation and hardware diagnostics.</p>
             </div>
         </div>
@@ -108,17 +119,17 @@
         <div class="grid">
             <div class="card">
                 <span class="tag">Academic Excellence</span>
-                <h3>#1 Ranked Student</h3>
-                <p>Graduated top of class with exceptional scores: <strong>Chemistry (90%)</strong>, <strong>Biology (90%)</strong>, and <strong>Mathematics (83%)</strong>.</p>
+                <h3>🏆 #1 Ranked Student</h3>
+                <p>Graduated top of class with exceptional national scores: <strong>Chemistry (90%)</strong>, <strong>Biology (90%)</strong>, and <strong>Mathematics (83%)</strong>.</p>
             </div>
             <div class="card">
                 <span class="tag">Technical Mastery</span>
-                <h3>Computer Science L1</h3>
+                <h3>📜 Computer Science L1</h3>
                 <p>Certified by Mekelle University DISH. Mastery in technical skill standards and digital innovation.</p>
             </div>
             <div class="card">
                 <span class="tag">Leadership</span>
-                <h3>Ethical Character</h3>
+                <h3>🤝 Ethical Character</h3>
                 <p>Officially recognized for exceptional moral character and leadership in international initiatives.</p>
             </div>
         </div>
@@ -131,12 +142,12 @@
                 <div class="card">
                     <h3>Hilton Hotel Menu UI</h3>
                     <p>A sophisticated digital menu system featuring real-time search and multi-language support (Amharic/English).</p>
-                    <span style="color: var(--primary); font-size: 0.8rem; font-weight: 600; margin-top: 15px; display: block;">OPEN PROJECT ↗</span>
+                    <span style="color: var(--primary); font-size: 0.8rem; font-weight: 600; margin-top: 15px; display: block;">VIEW ON GITHUB ↗</span>
                 </div>
             </a>
             <div class="card">
                 <h3>Security Audit Scripts</h3>
-                <p>Developing Python-based tools for vulnerability assessment and automated technical diagnostics.</p>
+                <p>Developing Python-based tools for vulnerability assessment, automated technical diagnostics, and network hardening.</p>
             </div>
         </div>
     </section>
@@ -154,6 +165,17 @@
     </footer>
 
     <script>
+        // Smooth Reveal Animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+        // URL Logic for Targeted Applications
         const urlParams = new URLSearchParams(window.location.search);
         const target = urlParams.get('target');
 
